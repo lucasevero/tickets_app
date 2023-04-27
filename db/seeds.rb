@@ -1,7 +1,107 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Ticket.destroy_all
+User.destroy_all
+
+jamie = User.create!(
+  email: "jamie@lewagon.com",
+  password: "secret",
+  username: "jamie",
+  first_name: "Jamie",
+  last_name: "Heo",
+  role: "student"
+)
+
+mathis = User.create!(
+  email: "mathis@lewagon.com",
+  password: "secret",
+  username: "mathis",
+  first_name: "Mathis",
+  last_name: "Desbrière",
+  role: "student"
+)
+
+esh = User.create!(
+  email: "esh@lewagon.com",
+  password: "secret",
+  username: "esh",
+  first_name: "Eshiyu",
+  last_name: "Park",
+  role: "student"
+)
+
+alban = User.create!(
+  email: "alban@lewagon.com",
+  password: "secret",
+  username: "alban",
+  first_name: "Alban",
+  last_name: "Avequin",
+  role: "student"
+)
+
+norman = User.create!(
+  email: "norman@lewagon.com",
+  password: "secret",
+  username: "norman",
+  first_name: "Chien",
+  last_name: "Hsiang Ku",
+  role: "student"
+)
+
+sammy = User.create!(
+  email: "sammy@lewagon.com",
+  password: "secret",
+  username: "sammy",
+  first_name: "Satinder",
+  last_name: "Singh",
+  role: "student"
+)
+
+ayanthi = User.create!(
+  email: "ayanthi@lewagon.com",
+  password: "secret",
+  username: "ayanthi",
+  first_name: "Ayanthi",
+  last_name: "Saparamadu",
+  role: "student"
+)
+
+monica = User.create!(
+  email: "monica@lewagon.com",
+  password: "secret",
+  username: "monica",
+  first_name: "Monica",
+  last_name: "Pham",
+  role: "student"
+)
+
+luca = User.create!(
+  email: "luca@lewagon.com",
+  password: "secret",
+  username: "luca",
+  first_name: "Luca",
+  last_name: "Severo",
+  role: "teacher"
+)
+
+anwesha = User.create!(
+  email: "anwesha@lewagon.com",
+  password: "secret",
+  username: "anwesha",
+  first_name: "Anwesha",
+  last_name: "Chatterjee",
+  role: "teacher"
+)
+
+teachers = [luca, anwesha]
+students = User.all - teachers
+
+100.times do
+  teacher = teachers.sample
+  student = students.sample
+  Ticket.create!(
+    challenge: ["Simple looping", "Stupid Coach", "OrangeTree", "Cookbook", "Food Delivery", "Smiley Grid", "Lord of the Rings", "Watchlist"].sample,
+    content: "I cant figure this out...",
+    teacher: teacher,
+    student: student,
+    solved: [false, false, false, false, false, false, false, false, false, true].sample
+  )
+end
