@@ -3,4 +3,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :tickets, foreign_key: :student_id
+  has_many :answers, foreign_key: :teacher_id
+
+  validates :role, inclusion: { in: ["student", "teacher"] }
+  validates :username, uniqueness: true
+
+  def student?
+    role == "student"
+  end
+
+  def teacher?
+    role == "teacher"
+  end
 end
