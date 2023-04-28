@@ -5,6 +5,18 @@ class Ticket < ApplicationRecord
   validate :teacher?
   validate :student?
 
+  def self.all_open
+    where(solved: false)
+  end
+
+  def open?
+    !solved
+  end
+
+  def solved?
+    solved
+  end
+
   private
 
   def teacher?

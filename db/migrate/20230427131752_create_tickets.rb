@@ -3,7 +3,7 @@ class CreateTickets < ActiveRecord::Migration[6.1]
     create_table :tickets do |t|
       t.string :challenge
       t.string :content
-      t.references :teacher, null: false, foreign_key: { to_table: :users }
+      t.references :teacher, foreign_key: { to_table: :users }
       t.references :student, null: false, foreign_key: { to_table: :users }
       t.boolean :solved
 

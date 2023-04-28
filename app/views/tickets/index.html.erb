@@ -1,0 +1,10 @@
+<div class="container">
+  <% @tickets.each do |ticket| %>
+    <div class="ticket_card">
+      <p class="student-name"><%= ticket.student.username %></p>
+      <p class="student-name">Assigned to: <span><%= ticket.teacher.username %></span></p>
+      <p><%= ticket.challenge %></p>
+      <p><%= ticket.content %></p>
+    </div>
+  <% end %>
+</div>
