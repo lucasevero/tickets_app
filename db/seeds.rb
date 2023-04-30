@@ -1,7 +1,7 @@
 Ticket.destroy_all
 User.destroy_all
 
-jamie = User.create!(
+User.create!(
   email: "jamie@lewagon.com",
   password: "secret",
   username: "jamie",
@@ -10,7 +10,7 @@ jamie = User.create!(
   role: "student"
 )
 
-mathis = User.create!(
+User.create!(
   email: "mathis@lewagon.com",
   password: "secret",
   username: "mathis",
@@ -19,7 +19,7 @@ mathis = User.create!(
   role: "student"
 )
 
-esh = User.create!(
+User.create!(
   email: "esh@lewagon.com",
   password: "secret",
   username: "esh",
@@ -28,7 +28,7 @@ esh = User.create!(
   role: "student"
 )
 
-alban = User.create!(
+User.create!(
   email: "alban@lewagon.com",
   password: "secret",
   username: "alban",
@@ -37,7 +37,7 @@ alban = User.create!(
   role: "student"
 )
 
-norman = User.create!(
+User.create!(
   email: "norman@lewagon.com",
   password: "secret",
   username: "norman",
@@ -46,7 +46,7 @@ norman = User.create!(
   role: "student"
 )
 
-sammy = User.create!(
+User.create!(
   email: "sammy@lewagon.com",
   password: "secret",
   username: "sammy",
@@ -55,7 +55,7 @@ sammy = User.create!(
   role: "student"
 )
 
-ayanthi = User.create!(
+User.create!(
   email: "ayanthi@lewagon.com",
   password: "secret",
   username: "ayanthi",
@@ -64,7 +64,7 @@ ayanthi = User.create!(
   role: "student"
 )
 
-monica = User.create!(
+User.create!(
   email: "monica@lewagon.com",
   password: "secret",
   username: "monica",
@@ -102,6 +102,6 @@ students = User.all - teachers
     content: "I cant figure this out...",
     teacher: teacher,
     student: student,
-    solved: [false, false, false, false, false, false, false, false, false, true].sample
+    solved: [true, true, true, true, true, true, true, true, true, false].sample
   )
 end

@@ -3,5 +3,15 @@
   margin: 1rem;
   border: 1px solid black;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-  padding: 0.5rem
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+}
+
+.challenge {
+  font-family: $subtitles-font;
+  font-size: 2rem;
+}
+
+.content {
+  font-size: 1.2rem;
 }
